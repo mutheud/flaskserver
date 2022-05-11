@@ -19,7 +19,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(120), unique=True, nullable=False)
 
-@app.route("/")
+@app.route("/", methods = ['POST','GET'])
 def home():
    return render_template("about.html")
 
@@ -40,13 +40,11 @@ def confirm_login():
          #Reads the json file and creates a python dictionary
          dyta = json.load(outfile)
          print(type(dyta))
-         # iterate through all key,values in the dict
-         for k , v in dyta.items():
-            for i, d in login_data.items():
-               if k == i and v  == d:
-                  return redirect(url_for('home'))
-               else:
-                  return "Incorrect email or password"
+         # iterate through all key,values in the dict:
+         if dyta['email'] == login_j.get('email') and dyta['psw'] == login_j.get('psw'):
+            return redirect(url_for('home'))
+         else:
+            return "Incorrect email or password"
    return login_data
 
 
@@ -61,13 +59,17 @@ def resultsJSON():
       results_data = request.form
       # converting dictionary to json
       data_json = json.dumps(results_data)
-      # write to register.json file
-      with open("register.json","w") as f:
-         f.write(data_json)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pair
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
    return data_json
-
-
-
 
 # @app.route('/success/<name>')
 # def success(name):
@@ -93,6 +95,7 @@ def data():
    if request.method == 'POST':
       form_data = request.form
       return render_template('data.html',form_data = form_data)
+
 
 
 if __name__ == '__main__':
