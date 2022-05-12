@@ -53,7 +53,6 @@ def confirm_login():
 def register():
    return render_template("register.html")
 
-
 @app.route("/register/resultsjson", methods = ['POST','GET'])
 def resultsJSON():
    if request.method == 'POST':
@@ -72,6 +71,7 @@ def resultsJSON():
                f.write(data_json +"\n")
 
    return data_json
+
 
 # @app.route('/success/<name>')
 # def success(name):
