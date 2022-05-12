@@ -61,7 +61,7 @@ def resultsJSON():
       data_json = json.dumps(results_data)
       # read to register.json file
       with open("register.json","r") as outfile:
-         # creating a json object in the form of key/value pair
+         # creating a json object in the form of key/value pa
          account = json.load(outfile)
          if("email" in account == data_json.get("email")):
             return f"username already exists"
@@ -70,6 +70,277 @@ def resultsJSON():
                f.write(data_json +"\n")
 
    return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   ir
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
+@app.route("/register/resultsjson", methods = ['POST','GET'])
+def resultsJSON():
+   if request.method == 'POST':
+      results_data = request.form
+      # converting dictionary to json
+      data_json = json.dumps(results_data)
+      # read to register.json file
+      with open("register.json","r") as outfile:
+         # creating a json object in the form of key/value pa
+         account = json.load(outfile)
+         if("email" in account == data_json.get("email")):
+            return f"username already exists"
+         else:
+            with open("register.json","a+") as f:
+               f.write(data_json +"\n")
+
+   return data_json
+   
 
 # @app.route('/success/<name>')
 # def success(name):
