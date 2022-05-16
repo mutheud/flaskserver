@@ -1,4 +1,5 @@
 # creating a Flask web server from the Flask module
+from ast import Raise
 from flask import Flask, redirect, render_template, url_for,jsonify,json, request
 # To access incoming request data and to give access to it.
 from flask_sqlalchemy import SQLAlchemy
@@ -58,17 +59,21 @@ def resultsJSON():
    if request.method == 'POST':
       results_data = request.form
       # converting dictionary to json
-      data_json = json.dumps([results_data])
+      data_json = jsonify(results_data)
       # read to register.json file
       with open("register.json","r") as outfile:
          # creating a json object in the form of key/value pair
-         account = json.load(outfile)
-         shared_items = {k: account[k] for k in account if k in data_json and account[k] == data_json[k]}
-         if shared_items == True:
-            return f"username already exists"
-         else:
-            with open("register.json","a+") as f:
-               f.write(data_json +"\n")
+
+         account = json.loads(outfile.read())
+         for a in account:
+            if a.get('email') == data_json.json.get('email'):
+               raise ValidationError("User Already Exists")
+               # print("User exists")
+               break
+            else:
+               with open("register.json","a+") as f:
+                  # import ipdb; ipdb.set_trace()
+                  f.write(str(data_json.json))
 
    return data_json
 
