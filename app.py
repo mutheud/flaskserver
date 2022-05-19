@@ -1,5 +1,6 @@
 # creating a Flask web server from the Flask module
 from ast import Raise
+from textwrap import indent
 from flask import Flask, redirect, render_template, url_for,jsonify,json, request
 # To access incoming request data and to give access to it.
 from flask_sqlalchemy import SQLAlchemy
@@ -32,21 +33,18 @@ def login():
 @app.route("/login/results.json", methods = ['POST','GET'])
 def confirm_login():
    if request.method == "POST":
-      login_data = request.form
-      # serializing
-      login_json = json.dumps(login_data)
-      login_j = json.loads(login_json)
-      print(type(login_j))
-
-      with open("register.json","r") as outfile:
+      login_data = request.args.to_dict(flat=False)
+      import ipdb; ipdb.set_trace()
+      with open("register.json","r") as readfile:
          #Reads the json file and creates a python dictionary
-         dyta = json.load(outfile)
+         dyta = json.load(readfile)
          print(type(dyta))
          # iterate through all key,values in the dict:
-         if dyta['email'] == login_j.get('email') and dyta['psw'] == login_j.get('psw'):
-            return redirect(url_for('home'))
-         else:
-            return "Incorrect email or password"
+         for i in dyta:
+            if i.get('email') == login_data.get('email') and i.get('psw') == login_data.get('psw'):
+               return redirect(url_for('home'))
+            else:
+               return "Incorrect email or password"
    return login_data
 
 
@@ -61,23 +59,24 @@ def resultsJSON():
       # converting dictionary to json
       data_json = jsonify(results_data)
       # read to register.json file
-      with open("register.json","r") as outfile:
-         # creating a json object in the form of key/value pair
+      # import ipdb; ipdb.set_trace()
+      with open("register.json") as outfile:
+         account = json.load(outfile)
+         print(account)
 
-         account = json.loads(outfile.read())
-         for a in account:
+      for a in account:
             if a.get('email') == data_json.json.get('email'):
                raise ValidationError("User Already Exists")
-               # print("User exists")
+               print("User exists")
                break
             else:
-               with open("register.json","a+") as f:
-                  # import ipdb; ipdb.set_trace()
-                  f.write(str(data_json.json))
-
-   return data_json
-
-
+               with open("register.json","w") as f:
+                  # new user is added to the account array
+                  account.append(data_json.json)
+                  # writes the serialized output to the file
+                  json.dump(account, f, indent=4)
+               break
+   return data_json.json
 # @app.route('/success/<name>')
 # def success(name):
 #    # return value automatically respondss with response status code and json data (jsonify) or text or html templates.
@@ -102,8 +101,6 @@ def data():
    if request.method == 'POST':
       form_data = request.form
       return render_template('data.html',form_data = form_data)
-
-
 
 if __name__ == '__main__':
    # This will help us trace the errors.
